@@ -10,3 +10,14 @@ body {
   color: white;
   font-family: 'Gloria Hallelujah', cursive;
 }
+
+.btn {
+  background-color: black;
+}
+
+.btn:hover{
+  background-color: black;
+  border-radius: 3px;
+  border: 2px solid white;
+
+}

@@ -17,8 +17,10 @@
   function restartPage(){
     let $refresh = $('<button></button>').html('Start Over').addClass("refresh btn btn-success");
     $('h4').hide();
+    $('h1').hide();
 
     $('body').append($refresh).animate({opacity:0}, 0).animate({ opacity: 1, top: "-10px" }, 6500);
+    
     $refresh.click(function(){
       location.reload().animate({opacity:0}, 0).animate({opacity: 1, top: "-10px" }, 6500);
     });
@@ -37,8 +39,8 @@
     let $name = $("#name").val();
       if ($name.length > 0){
         $("h1").html("Hello, " + $name + ". <br /> <br /> I wanted you to know that I finally found a place to call home..." ).animate({opacity:0}, 0).animate({ opacity: 1, top: "-10px" }, 6500, function(){
-          $("h1").html("Let me in.").animate({opacity:1});
-          restartPage();
+          $("h1").html("Let me in.").animate({opacity:0}, 0).animate({opacity:1, top: "10px"}, 4000);
+          setTimeout(restartPage, 10000);
         });
         function attachFX(){
           let $soundFX = $("<audio></audio").attr("src", "door.mp3").attr("autoplay", "true").attr("loop", "true").addClass('audio');
@@ -50,6 +52,7 @@
       else {
       $("h1").html(". . . . .");
       restartPage();
+      $('h1').show();
     }
   });
 
