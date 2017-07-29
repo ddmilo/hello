@@ -4,6 +4,9 @@
     $('h1').css('display', 'block');
     $('h1').animate({ opacity: 0 }, 0);
     $('h1').animate({ opacity: 1, top: "-10px" }, 3500);
+    $('h4').css('display', 'block');
+    $('h4').animate({ opacity: 0 }, 0);
+    $('h4').animate({ opacity: 1, top: "-10px" }, 3500);
     $('form').css('display', 'block');
     $('form').animate({ opacity: 0 }, 0);
     $('form').animate({ opacity: 1, top: "-10px" }, 3500);
@@ -13,6 +16,8 @@
 
   function restartPage(){
     let $refresh = $('<button></button>').html('Start Over').addClass("refresh btn btn-success");
+    $('h4').hide();
+
     $('body').append($refresh).animate({opacity:0}, 0).animate({ opacity: 1, top: "-10px" }, 6500);
     $refresh.click(function(){
       location.reload().animate({opacity:0}, 0).animate({opacity: 1, top: "-10px" }, 6500);
@@ -22,11 +27,13 @@
   $('#button').keypress(function (e) {
     if (e.which == 13) {
       $('form').submit();
-        //<---- Add this line
     }
   });
+
   $("#button").click(function(){
     $('form').hide();
+    $('h4').hide();
+
     let $name = $("#name").val();
       if ($name.length > 0){
         $("h1").html("Hello, " + $name + ". <br /> <br /> I wanted you to know that I finally found a place to call home..." ).animate({opacity:0}, 0).animate({ opacity: 1, top: "-10px" }, 6500, function(){
