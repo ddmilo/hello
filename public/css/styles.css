@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 15em;
+  text-align: center;
+  background-color: black;
+  color: white;
+
+}
+
+embed {
+  /*display: none;*/
+}
