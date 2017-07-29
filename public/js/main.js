@@ -46,7 +46,8 @@
     }
   });
 
-  if ($(window).width() < 960) {
+
+  if (screen.width <= 960) {
    $('h1').html('Sorry, but currently there is no working mobile version for this app. <br><br>Please use a desktop/laptop and a pair of headphones to fully experience this app. <br><br> Thank You.');
    $('form').hide();
 }
