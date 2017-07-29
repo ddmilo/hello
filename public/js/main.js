@@ -19,6 +19,12 @@
     });
   }
 
+  $('#button').keypress(function (e) {
+    if (e.which == 13) {
+      $('form').submit();
+        //<---- Add this line
+    }
+  });
   $("#button").click(function(){
     $('form').hide();
     let $name = $("#name").val();
